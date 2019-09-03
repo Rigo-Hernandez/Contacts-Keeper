@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
   res.send('Get logged in user');
 });
 
-// @route  POST    api/auth   
-//@desc           Auth user and get token  
-// @access        Public  
+// @route  POST    api/auth
+//@desc           Auth user and get token
+// @access        Public
 router.post(
   '/',
   [
@@ -34,7 +34,6 @@ router.post(
       let user = await User.findOne({ email });
       if (!user) {
         return res.status(400).json({ msg: 'Invalid Credentials' });
-        
       }
 
       const isMatch = await bcrypt.compare(password, user.password);
