@@ -4,7 +4,7 @@ import ContactContext from '../../context/contact/contactContext';
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
 
-  const { addContact, current } = contactContext;
+  const { addContact, current ,clearCurrent, updateContact} = contactContext;
 
   const [contact, setContact] = useState({
     name: '',
@@ -12,6 +12,10 @@ const ContactForm = () => {
     phone: '',
     type: 'personal'
   });
+
+  const clearAll = () => {
+    clearCurrent();
+  }
 
   useEffect(() => {
     if (current !== null) {
@@ -30,6 +34,11 @@ const ContactForm = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    if(current === null) {
+      addContact(contact)
+    } else {
+      updateContact(contact);
+    }
     addContact(contact);
     setContact({
       name: '',
@@ -91,6 +100,12 @@ const ContactForm = () => {
           className='btn btn-primary btn-block'
         />
       </div>
+        {current && <div>
+          <button className="btn btn-light btn-block" onClick={clearAll}>Clear</button>
+        </div>
+
+        }
+     
     </form>
   );
 };
