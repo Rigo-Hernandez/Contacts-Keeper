@@ -76,15 +76,13 @@ const ContactState = props => {
     dispatch({ type: CLEAR_FILTER });
   };
 
-
-
   return (
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
         current: state.current,
-        filtered:state.filtered,
-      
+        filtered: state.filtered,
+
         addContact,
         deleteContact,
         setCurrent,
