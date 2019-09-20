@@ -37,7 +37,7 @@ const Login = props => {
       login({
         email,
         password
-      })
+      });
     }
   };
 
