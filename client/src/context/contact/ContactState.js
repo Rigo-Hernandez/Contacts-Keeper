@@ -36,7 +36,6 @@ const ContactState = props => {
     }
   };
 
-
   //Add Contact
   const addContact = async contact => {
     const config = {
@@ -109,4 +108,3 @@ const ContactState = props => {
 };
 
 export default ContactState;
-
