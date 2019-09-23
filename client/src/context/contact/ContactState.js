@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import ContactContext from './contactContext';
-import axios from 'axios'
+import axios from 'axios';
 import contactReducer from './contactReducer';
 import {
   ADD_CONTACT,
@@ -29,16 +29,14 @@ const ContactState = props => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
+    };
     try {
-      const res = await axios.post('/api/contacts', contact, config)
+      const res = await axios.post('/api/contacts', contact, config);
 
       dispatch({ type: ADD_CONTACT, payload: res.data });
-
     } catch (err) {
-      dispatch({ type: CONTACT_ERROR, payload: err.response.msg })
+      dispatch({ type: CONTACT_ERROR, payload: err.response.msg });
     }
-
   };
 
   //Delete Contact
