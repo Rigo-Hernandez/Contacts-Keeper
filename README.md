@@ -2,7 +2,8 @@
 
 > Full stack MERN contact manager with React hooks, context & JWT authentication.
 
-A Full-Stack project to keep track of your contacts. Create an account and add, remove, edit and delete your contacts## Usage
+A Full-Stack project to keep track of your contacts. Create an account and add, remove, edit and delete your contacts
+## Usage
 
 Install dependencies
 
