@@ -9,8 +9,11 @@ A Full-Stack project to keep track of your contacts. Create an account and add, 
 Install dependencies
 
 ```bash
+
 npm install
+
 npm client-install
+
 ```
 
 ### Mongo connection setup
